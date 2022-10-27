@@ -1,0 +1,18 @@
+#computer_icon{
+    transform: translateX(-100%);
+    animation: move_computer_over_content 5s forwards;
+  }
+
+ text, h2{
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5em;
+  }
+
+  @keyframes move_computer_over_content{
+    from{
+        transform: translateX(-100%);}
+
+    to{
+        transform:translateX(0);
+    }
+}
