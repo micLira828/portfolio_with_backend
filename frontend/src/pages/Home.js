@@ -1,6 +1,7 @@
 import Computer from './Computer.js'
 import Nav from './Nav';
 
+
 function Home() {
     return (
       <>

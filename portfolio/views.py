@@ -1,28 +1,32 @@
-from django.shortcuts import render
-
-# Create your views here.
-from django.shortcuts import render
+from django.contrib.auth.models import User
 from rest_framework import viewsets
-from .serializers import WebsiteSerializer
-from .serializers import AnimationSerializer
-from .serializers import DesignSerializer
-from .models import Animation
-from .models import Website
-from .models import Design
+from rest_framework import permissions
+from .serializers import UserSerializer, WebsiteSerializer, AnimationSerializer, DesignSerializer
+from .models import Website, Animation, Design
+
+
+'''class UserViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = User.objects.all().order_by('-date_joined')
+    serializer_class = UserSerializer
+    permission_classes = [AllowAny]'''
 
 class WebsiteViewSet(viewsets.ModelViewSet):
-    serializer_class = WebsiteSerializer
     queryset = Website.objects.all()
+    serializer_class = WebsiteSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 class AnimationViewSet(viewsets.ModelViewSet):
-    serializer_class = AnimationSerializer
     queryset = Animation.objects.all()
+    serializer_class = AnimationSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 class DesignViewSet(viewsets.ModelViewSet):
-    serializer_class = DesignSerializer
     queryset = Design.objects.all()
+    serializer_class = DesignSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
-def index(request):
-    return render(request, 'index.html')
-    
+
 

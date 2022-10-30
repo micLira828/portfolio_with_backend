@@ -1,11 +1,14 @@
+from django.urls import include, path
 from rest_framework import routers
-from .views import WebsiteViewSet
-from .views import AnimationViewSet
-from .views import DesignViewSet
+from . import views
 
 router = routers.DefaultRouter()
-router.register(r'api/websites',WebsiteViewSet, 'websites')
-router.register(r'api/animations',AnimationViewSet, 'animations')
-router.register(r'api/designs',DesignViewSet, 'designs')
+router.register(r'website', views.AnimationViewSet)
+router.register(r'design', views.DesignViewSet)
+router.register(r'animation', views.AnimationViewSet)
 
-urlpatterns = router.urls
+# Wire up our API using automatic URL routing.
+# Additionally, we include login URLs for the browsable API.
+urlpatterns = [
+    path('', include(router.urls)),
+]

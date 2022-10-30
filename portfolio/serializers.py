@@ -1,16 +1,20 @@
+from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import Animation
-from .models import Website
-from .models import Design
+from .models import Website, Animation, Design
 
-class AnimationSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Animation
-        fields = '__all__'
+        model = User
+        fields = ['url', 'username', 'email', 'groups']
 
 class WebsiteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Website
+        fields = '__all__'
+
+class AnimationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Animation
         fields = '__all__'
 
 class DesignSerializer(serializers.ModelSerializer):
