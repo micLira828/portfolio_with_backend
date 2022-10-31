@@ -3,7 +3,7 @@ from rest_framework import routers
 from . import views
 
 router = routers.DefaultRouter()
-router.register(r'website', views.AnimationViewSet)
+router.register(r'website', views.WebsiteViewSet)
 router.register(r'design', views.DesignViewSet)
 router.register(r'animation', views.AnimationViewSet)
 
