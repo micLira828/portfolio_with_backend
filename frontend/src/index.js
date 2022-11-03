@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 /*import Home from './Home';*/
 import $ from 'jquery';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 /*Import other pages here */
 import reportWebVitals from './reportWebVitals';

@@ -1,5 +1,14 @@
 import { useEffect, useState } from "react";
 
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+
 function Projects() {
     const [website, setWebsite] = useState([]);
     const [animation, setAnimation] = useState([]);
@@ -20,24 +29,38 @@ function Projects() {
 
         const designResponse = await fetch('/portfolio/design/')
         const designData = await animationResponse.json()
-        setAnimation(designData)
-
-        console.log(websiteData)
-        console.log(animationData)
-        console.log(designData)
-
-        
+        setDesign(designData)        
       }
 
       return(
+       <>
+        <Container fluid = "md">
+          <Row>
+          <Col md = {4}>
+             <p>Hi</p>
+            </Col>{/*<!--end of column-->*/}
+
+            <Col md = {4}>
+              <p>Hi</p>
+            </Col>{/*<!--end of column-->*/}
+
+            <Col md = {4}>
+               <p>Hi</p>
+            </Col>{/*<!--end of column-->*/}
+
+
+          </Row>{/*<!--end of row-->*/}
+        </Container>{/*<!--end of container-->*/}
+
         <div class="album py-5 bg-light">
         <div class="container">
-    
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            {website && website.map(w => (
+        
+          <div class = "row">
+          {website && website.map(w => (
               <div class="col">
+              
               <div class="card shadow-sm">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="225" src={p.image.url} />
+                <img class="bd-placeholder-img card-img-top" width="100%" height="225" src={w.image} />
     
                 <div class="card-body">
 
@@ -54,11 +77,11 @@ function Projects() {
             </div>
             ))}
            
-
             </div>
           </div>
         </div>
-      );
-}
+        </>
+         );
+        }
 
 export default Projects;
