@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import ReactDOM from 'react-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
@@ -34,52 +34,30 @@ function Projects() {
 
       return(
        <>
-        <Container fluid = "md">
-          <Row>
-          <Col md = {4}>
-             <p>Hi</p>
-            </Col>{/*<!--end of column-->*/}
-
-            <Col md = {4}>
-              <p>Hi</p>
-            </Col>{/*<!--end of column-->*/}
-
-            <Col md = {4}>
-               <p>Hi</p>
-            </Col>{/*<!--end of column-->*/}
-
-
-          </Row>{/*<!--end of row-->*/}
-        </Container>{/*<!--end of container-->*/}
-
-        <div class="album py-5 bg-light">
-        <div class="container">
+        <Container>
         
-          <div class = "row">
+          <Row>
           {website && website.map(w => (
-              <div class="col">
+              <Col md = {4}>
               
-              <div class="card shadow-sm">
-                <img class="bd-placeholder-img card-img-top" width="100%" height="225" src={w.image} />
-    
-                <div class="card-body">
+              <Card>
+                <Card.Body>
 
-                 <h5 class="card-title">{w.title}</h5>
-                  <p class="card-text">{w.description}</p>
+                 <Card.Title>{w.title}</Card.Title>
+                  <Card.Text>{w.description}</Card.Text>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" href = {w.url} class="btn btn-sm btn-outline-secondary">View</button>
+                    <Button variant="primary" href = {w.url} >Go somewhere</Button>
                     </div>
-                    <small class="text-muted">9 mins</small>
                   </div>
-                </div>
-              </div>
-            </div>
+                </Card.Body>
+              </Card>
+            </Col>
             ))}
            
-            </div>
-          </div>
-        </div>
+            </Row>
+          </Container>
+        
         </>
          );
         }

@@ -2,6 +2,7 @@ import * as React from "react"
 import './Computer.css';
 
 const Computer = (props) => (
+ <div class = "comp">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 609 562"
@@ -277,7 +278,7 @@ const Computer = (props) => (
         />
       </g>
     </g>
-  </svg>
+  </svg></div>
 )
 
 export default Computer
