@@ -40,16 +40,13 @@ function Projects() {
           {website && website.map(w => (
               <Col md = {4}>
               
-              <Card>
+              <Card style = {{width: '18rem'}} class = "shadow-sm">
+              <Card.Img variant = "top" src = "https://www2.shutterstock.com/blog/wp-content/uploads/sites/5/2016/03/fall-trees-road-1.jpg"/>
                 <Card.Body>
-
+                 
                  <Card.Title>{w.title}</Card.Title>
                   <Card.Text>{w.description}</Card.Text>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
                     <Button variant="primary" href = {w.url} >Go somewhere</Button>
-                    </div>
-                  </div>
                 </Card.Body>
               </Card>
             </Col>
