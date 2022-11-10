@@ -40,8 +40,8 @@ function Projects() {
           {website && website.map(w => (
               <Col md = {4}>
               
-              <Card style = {{width: '18rem'}} class = "shadow-sm">
-              <Card.Img variant = "top" src = "https://www2.shutterstock.com/blog/wp-content/uploads/sites/5/2016/03/fall-trees-road-1.jpg"/>
+              <Card  style={{ width: '18rem' }} class = "shadow-sm">
+              <Card.Img variant = "top" alt = "Project Image" src = {w.image}/>
                 <Card.Body>
                  
                  <Card.Title>{w.title}</Card.Title>
