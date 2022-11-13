@@ -41,6 +41,7 @@ function Projects() {
               <Col md = {4}>
               
               <Card  style={{ width: '18rem' }} class = "shadow-sm">
+              {console.log(w.image)}
               <Card.Img variant = "top" alt = "Project Image" src = {w.image}/>
                 <Card.Body>
                  
